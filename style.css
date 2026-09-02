@@ -1,0 +1,632 @@
+/* Global */
+:root {
+  color-scheme: light;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #11264b;
+  background: #f3f7ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(28, 83, 209, 0.12), transparent 32%), #f3f7ff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.container {
+  width: min(1170px, calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.logo-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #1646d4, #0360d4);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.brand-title {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0b2a5d;
+}
+
+.brand-subtitle {
+  display: block;
+  font-size: 0.85rem;
+  color: #4d627a;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  color: #2d437f;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #0d4be0;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.6rem;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button-primary {
+  background: #0d4be0;
+  color: #fff;
+  box-shadow: 0 18px 45px rgba(13, 75, 224, 0.18);
+}
+
+.button-outline {
+  background: #ffffff;
+  color: #0d4be0;
+  border: 1px solid rgba(13, 75, 224, 0.16);
+}
+
+.button-secondary {
+  background: #0f1f47;
+  color: #fff;
+}
+
+.hero-section {
+  padding: 4rem 0 2rem;
+  background: linear-gradient(180deg, rgba(8, 36, 90, 0.92) 0%, rgba(5, 31, 73, 0.84) 100%), url('https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?auto=format&fit=crop&w=1600&q=80') no-repeat center center / cover;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.85fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin: 0 0 1rem;
+  color: #a5c5ff;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-size: clamp(2.75rem, 4vw, 4.75rem);
+  line-height: 0.95;
+  color: #ffffff;
+}
+
+.hero-text {
+  max-width: 42rem;
+  margin: 1.3rem 0 2rem;
+  color: #dbe5ff;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-aside {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.info-card {
+  width: 100%;
+  background: rgba(255,255,255,0.97);
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: 0 30px 60px rgba(19, 47, 111, 0.18);
+}
+
+.info-card-top {
+  margin-bottom: 1.75rem;
+}
+
+.info-card-title {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0d4be0;
+  margin-bottom: 0.45rem;
+}
+
+.info-card p,
+.row-label,
+.job-company,
+.job-location,
+.job-salary {
+  margin: 0;
+}
+
+.info-card-top p,
+.info-row p {
+  color: #2b3b5b;
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+.info-row {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(20, 42, 95, 0.08);
+}
+
+.row-label {
+  display: block;
+  color: #6a7a99;
+  font-size: 0.87rem;
+  margin-bottom: 0.35rem;
+}
+
+.search-section {
+  margin-top: -2.5rem;
+  padding: 0 0 3rem;
+}
+
+.search-card {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 32px 70px rgba(20, 50, 100, 0.12);
+  padding: 2rem;
+}
+
+.search-form {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(160px, 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+
+.field {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.field label {
+  color: #4f5d7a;
+  font-size: 0.9rem;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 1rem 1rem;
+  border: 1px solid #dfe3ef;
+  border-radius: 16px;
+  background: #f8fbff;
+  color: #11264b;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: #0d4be0;
+  box-shadow: 0 0 0 4px rgba(13, 75, 224, 0.12);
+}
+
+.search-button {
+  width: 100%;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 0 1.5rem;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: clamp(2rem, 2.2vw, 2.75rem);
+  color: #0f2251;
+}
+
+.view-all {
+  color: #0d4be0;
+  font-weight: 600;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.job-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 22px 38px rgba(21, 49, 105, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.job-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  font-size: 1.35rem;
+  color: #fff;
+}
+
+.blue-card .job-icon {
+  background: #1957d9;
+}
+
+.green-card .job-icon {
+  background: #1e9c76;
+}
+
+.purple-card .job-icon {
+  background: #6e4ce4;
+}
+
+.orange-card .job-icon {
+  background: #f2923e;
+}
+
+.job-card h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: #10214a;
+}
+
+.job-company,
+.job-location,
+.job-salary {
+  color: #5a6c8f;
+  font-size: 0.98rem;
+}
+
+.job-location {
+  margin-top: 0.45rem;
+}
+
+.job-salary {
+  font-weight: 600;
+  color: #1a345f;
+}
+
+.small {
+  padding: 0.85rem 1.1rem;
+  font-size: 0.95rem;
+}
+
+.features-section {
+  padding: 3rem 0 1rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 24px 42px rgba(15, 36, 81, 0.08);
+  display: grid;
+  gap: 1rem;
+}
+
+.feature-icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: rgba(13, 75, 224, 0.12);
+  color: #0d4be0;
+  font-size: 1.4rem;
+}
+
+.feature-card h3 {
+  margin: 0;
+  font-size: 1.18rem;
+  color: #0f2350;
+}
+
+.feature-card p {
+  margin: 0;
+  color: #5b6c8f;
+  line-height: 1.7;
+}
+
+.contact-section {
+  padding: 3rem 0 4rem;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: #0d4be0;
+  color: #ffffff;
+  border-radius: 28px;
+  padding: 2rem 2.5rem;
+}
+
+.contact-card h2 {
+  margin: 0 0 0.75rem;
+  font-size: 2rem;
+}
+
+.contact-card p {
+  margin: 0;
+  color: rgba(255,255,255,0.88);
+  max-width: 34rem;
+}
+
+.contact-details {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-details strong {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.contact-details span {
+  display: block;
+  color: rgba(255,255,255,0.92);
+}
+
+@media (max-width: 1024px) {
+  .cards-grid,
+  .features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .hero-grid,
+  .contact-card,
+  .search-form {
+    grid-template-columns: 1fr;
+  }
+  .hero-aside {
+    justify-content: center;
+  }
+  .search-section {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .main-nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin: 1rem 0 0;
+  }
+  .search-form {
+    display: grid;
+  }
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .contact-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.apply-section {
+  padding: 4rem 0 5rem;
+}
+
+.apply-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.form-card,
+.info-box {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 2.5rem;
+  box-shadow: 0 24px 60px rgba(15, 36, 81, 0.12);
+}
+
+.section-label {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #0d4be0;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.form-card h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.1rem, 3vw, 2.8rem);
+  color: #0f2251;
+}
+
+.form-card p {
+  margin: 0 0 2rem;
+  color: #5a6c8f;
+  line-height: 1.75;
+}
+
+.apply-form {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.form-row.single {
+  grid-template-columns: 1fr;
+}
+
+.input-group {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.input-group label {
+  color: #4f5d7a;
+  font-size: 0.95rem;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+  width: 100%;
+  padding: 1rem 1rem;
+  border: 1px solid #dfe3ef;
+  border-radius: 18px;
+  background: #f8fbff;
+  color: #11264b;
+}
+
+.input-group textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.input-group input[type="file"] {
+  padding: 0.85rem 1rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.info-box h2 {
+  margin: 0 0 1rem;
+  font-size: 1.9rem;
+  color: #0f2251;
+}
+
+.info-box p {
+  margin: 0 0 1.8rem;
+  color: #5b6c8f;
+  line-height: 1.8;
+}
+
+.info-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.info-list div {
+  background: #f5f8ff;
+  border-radius: 18px;
+  padding: 1rem 1.3rem;
+}
+
+.info-list strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #0d4be0;
+  margin-bottom: 0.35rem;
+}
+
+.info-list span {
+  color: #4f5d7a;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 860px) {
+  .apply-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
